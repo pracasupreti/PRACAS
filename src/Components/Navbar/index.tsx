@@ -6,7 +6,7 @@ const Navbar = () => {
     <>
       <Flex justifyContent={"space-around"} py={"1rem"}>
         <HStack>
-          <Image src={svgs.Logo} />
+          <Image src={svgs.Logo} height={{ base: "75px", md: "100px" }} />
           <Text
             fontSize={26}
             fontWeight={"bold"}
@@ -15,13 +15,8 @@ const Navbar = () => {
             | IME Pay
           </Text>
         </HStack>
-        <HStack
-          fontSize={24}
-          fontWeight={"bold"}
-          gap={"1rem"}
-          display={{ base: "none", md: "flex" }}
-        >
-          <Text display={{ base: "none", md: "block" }}>
+        <HStack fontSize={24} fontWeight={"bold"} gap={"1rem"}>
+          <Text display={{ base: "none", lg: "block" }}>
             Home | About | Blog | Contact
           </Text>
           <Center>

@@ -9,14 +9,14 @@ const Home = () => {
           justifyContent={"center"}
           alignItems={"center"}
           gap={"2rem"}
-          direction={{ base: "column-reverse", md: "row" }}
+          direction={{ base: "column-reverse", lg: "row" }}
         >
           <Stack justifyContent={"center"} alignItems={"center"} gap={"2rem"}>
             <Text
               fontWeight={{ base: "bold", md: "light" }}
-              fontSize={{ base: "24px", md: "54px" }}
+              fontSize={{ base: "24px", md: "38px", lg: "48px" }}
               pos={{ base: "absolute", md: "static" }}
-              top={"14%"}
+              top={"11%"}
             >
               Professional Marketplace
             </Text>
@@ -25,8 +25,8 @@ const Home = () => {
             </Text>
             <Stack
               gap={"2.5rem"}
-              pt={"3.5rem"}
-              direction={{ base: "column", md: "row" }}
+              pt={{ base: "0", lg: "3.5rem" }}
+              direction={{ base: "column", lg: "row" }}
             >
               <Image src={svgs.Playstore} />
               <Image src={svgs.Startup} />
