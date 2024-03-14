@@ -1,7 +1,9 @@
 import { Box, Flex, Image, Stack, Text } from "@chakra-ui/react";
 import { svgs } from "../assets/svgs";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+  const navigate = useNavigate();
   return (
     <>
       <Box py={"4rem"}>
@@ -16,20 +18,35 @@ const Home = () => {
               fontWeight={{ base: "bold", md: "light" }}
               fontSize={{ base: "24px", md: "38px", lg: "48px" }}
               pos={{ base: "absolute", md: "static" }}
-              top={"11%"}
+              top={"14%"}
             >
               Professional Marketplace
             </Text>
-            <Text fontWeight={"regular"} fontSize={"32px"}>
+
+            <Text
+              fontWeight={"regular"}
+              fontSize={"32px"}
+              display={{ base: "none", md: "block" }}
+            >
               100K Downloads
+            </Text>
+            <Text fontWeight={"bold"} fontSize={{ base: "16px" }}>
+              Proudly Made in Biratnagar
             </Text>
             <Stack
               gap={"2.5rem"}
               pt={{ base: "0", lg: "3.5rem" }}
-              direction={{ base: "column", lg: "row" }}
+              direction={"row"}
+              justifyContent={"center"}
+              width={{ base: "160px", md: "fit-content" }}
             >
-              <Image src={svgs.Playstore} />
-              <Image src={svgs.Startup} />
+              <Image
+                src={svgs.Playstore}
+                cursor={"pointer"}
+                onClick={() => navigate("/")}
+              />
+
+              <Image src={svgs.Startup} cursor={"pointer"} />
             </Stack>
           </Stack>
           <Image src={svgs.MobileHero} />

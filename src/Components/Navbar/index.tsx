@@ -6,7 +6,7 @@ const Navbar = () => {
     <>
       <Flex justifyContent={"space-around"} py={"1rem"}>
         <HStack>
-          <Image src={svgs.Logo} height={{ base: "75px", md: "100px" }} />
+          <Image src={svgs.Logo} height={{ base: "70px", md: "100px" }} />
           <Text
             fontSize={26}
             fontWeight={"bold"}

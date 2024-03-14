@@ -3,7 +3,7 @@ import { Box, Divider, Stack, Text } from "@chakra-ui/react";
 const Footer = () => {
   return (
     <Box
-      position={{ base: "static", lg: "fixed" }}
+      position={"fixed"}
       bottom="0"
       px={"3.5rem"}
       py={"1rem"}
@@ -15,7 +15,7 @@ const Footer = () => {
         direction={"row"}
         justifyContent={{ base: "center", lg: "space-between" }}
       >
-        <Text fontWeight={"bold"} fontSize={{ base: "14px", md: "16px" }}>
+        <Text fontWeight={"bold"} fontSize={{ base: "12px", md: "16px" }}>
           All Rights Reserved. © Sriyog Consulting Pvt. Ltd. D-U-N-S #
         </Text>
         <Text

@@ -2,4 +2,4 @@
 
 git remote remove origin 
 git remote add origin https://github.com/pracasupreti/PRACAS.git
-git push origin main
+git push origin anish
