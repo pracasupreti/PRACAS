@@ -5,7 +5,7 @@ const Footer = () => {
     <Box
       position={"fixed"}
       bottom="0"
-      px={"3.5rem"}
+      px={{ base: "3.5rem", md: "5rem" }}
       py={"1rem"}
       w={"100%"}
       bg={"#fff"}

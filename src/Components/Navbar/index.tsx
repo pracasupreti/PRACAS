@@ -20,8 +20,11 @@ const Navbar = () => {
             Home | About | Blog | Contact
           </Text>
           <Center>
-            <Image src={svgs.Arrow} pos={"relative"} />
-            <Text pos={"absolute"}>Mail</Text>
+            <Image
+              src={svgs.Arrow}
+              cursor={"pointer"}
+              onClick={() => (window.location.href = "https://mail.yandex.com")}
+            />
           </Center>
         </HStack>
       </Flex>
