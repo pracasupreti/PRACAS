@@ -15,7 +15,7 @@ const Footer = () => {
         direction={"row"}
         justifyContent={{ base: "center", lg: "space-between" }}
       >
-        <Text fontWeight={"bold"} fontSize={{ base: "12px", md: "16px" }}>
+        <Text fontWeight={"bold"} fontSize={{ base: "10px", md: "16px" }}>
           All Rights Reserved. © Sriyog Consulting Pvt. Ltd. D-U-N-S #
         </Text>
         <Text

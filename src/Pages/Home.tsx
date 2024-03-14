@@ -10,14 +10,14 @@ const Home = () => {
           alignItems={"center"}
           gap={{ base: "1rem", md: "2rem" }}
           direction={{ base: "column-reverse", lg: "row" }}
-          mt={"2.5rem"}
+          mt={{ base: "0rem", md: "2.5rem" }}
         >
           <Stack justifyContent={"center"} alignItems={"center"} gap={"2rem"}>
             <Text
               fontWeight={{ base: "bold", md: "light" }}
               fontSize={{ base: "24px", md: "38px", lg: "48px" }}
               pos={{ base: "absolute", md: "static" }}
-              top={"15%"}
+              top={"13%"}
             >
               Professional Marketplace
             </Text>
@@ -53,7 +53,7 @@ const Home = () => {
           </Stack>
           <Image
             src={svgs.MobileHero}
-            width={{ base: "340px", md: "fit-content" }}
+            width={{ base: "80%", md: "fit-content" }}
           />
         </Flex>
       </Box>
