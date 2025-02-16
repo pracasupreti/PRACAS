@@ -36,19 +36,18 @@ export const Join = () => {
             fields: {
               "First Name": formData.firstName,
               "Last Name": formData.lastName,
-              "Phone Number": formData.phoneNo,
+              Phone: formData.phoneNo,
               Profession: formData.profession,
               "Other Profession": formData.otherProfession,
               Gender: formData.gender,
               City: formData.city,
-              "Ward Number": formData.wardNo,
-              "Working Area": formData.workingArea,
+              "Ward #": formData.wardNo,
+              Area: formData.workingArea,
               "Referred By": formData.referredBy,
             },
           },
         ],
       };
-      console.log(sendData);
 
       const response = await fetch(AIRTABLE_API, {
         method: "POST",
@@ -58,12 +57,14 @@ export const Join = () => {
         },
         body: JSON.stringify(sendData),
       });
+      console.log(sendData);
 
       if (!response.ok) {
         throw new Error("Failed to submit form");
       }
 
-      console.log(await response.json());
+      const result = await response.json();
+      console.log(result);
       alert("Form submitted successfully!");
 
       setFormData({
@@ -80,7 +81,7 @@ export const Join = () => {
       });
     } catch (error) {
       console.error("Error submitting form:", error);
-      alert("Failed to submit form.");
+      alert("Failed to submit form. Please try again.");
     }
   };
 
