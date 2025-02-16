@@ -13,36 +13,34 @@ const steps = [
 
 export const HowItWorks = () => {
   return (
-    <div className="py-10">
-      <div className="container mx-auto text-center">
-        <h2 className="text-xl font-bold text-gray-800 mb-10">How it Works?</h2>
-        <div className="flex justify-center flex-wrap gap-14">
-          {steps.map((step, i) => (
-            <div key={i} className="flex flex-col items-center">
-              <div
-                className="relative w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 
-                rounded-full bg-white border-2 border-blue-400 
-                flex items-center justify-center
-                shadow-lg transition-all duration-300"
-                style={{
-                  boxShadow: "0 4px 10px rgba(0, 102, 255, 0.3)",
-                  border: "2px solid rgba(0, 102, 255, 0.6)",
-                }}
-              >
-                <img
-                  src={step.image}
-                  alt={step.title}
-                  className="w-30 h-30 sm:w-30 sm:h-30 md:w-35 md:h-35 object-contain"
-                />
-              </div>
+    <div className=" flex flex-col items-center py-12 mb-2">
+      <h2 className="font-bold font-roboto text-lg text-gray-700">
+        How it Works ?
+      </h2>
 
-              <h4 className="text-xl font-semibold text-gray-700 mt-4">
-                {step.title}
-              </h4>
-              <div className="w-10 border-t-2 border-gray-300 mt-1"></div>
+      {/* Steps */}
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-10">
+        {steps.map((step, i) => (
+          <div key={i} className=" flex flex-col items-center mb-6">
+            <div
+              className="relative w-[180px] h-[180px] sm:w-44 sm:h-44 md:w-40 md:h-40 lg:w-48 lg:h-48
+                flex items-center justify-center rounded-full bg-white 
+                border-3 border-blue-200 shadow-xl transition-all"
+              style={{ boxShadow: "0px 0px 10px rgba(0, 102, 255, 0.5)" }}
+            >
+              <img
+                src={step.image}
+                alt={step.title}
+                className="w-[300px] h-[300px] sm:w-30 sm:h-30 md:w-30 md:h-30 object-contain"
+              />
             </div>
-          ))}
-        </div>
+
+            <h4 className="text-xl md:text-xl  text-gray-600 mt-4">
+              {step.title}
+            </h4>
+            <div className="w-10 border-t-2 border-gray-300 mt-1"></div>
+          </div>
+        ))}
       </div>
     </div>
   );

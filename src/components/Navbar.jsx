@@ -1,110 +1,87 @@
+import { Navbar, Nav, Container } from "react-bootstrap";
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { HiMenu } from "react-icons/hi";
 
 import logo from "../assets/logo.png";
 import joinNow from "../assets/join-now.png";
-import Mail from "../assets/mail.png";
+import mail from "../assets/mail.png";
 
-export const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+export const NavbarComponent = () => {
+  const [isOpenMenu, setIsOpenMenu] = useState(false);
 
   return (
-    <div className="fixed top-0 left-0 w-full bg-white shadow-md z-50">
-      <div className="container mx-auto px-4">
-        <nav className="flex items-center justify-between py-4">
-          <Link to="/" className="flex items-center space-x-2">
-            <img src={logo} alt="Logo" className="h-10" />
-            <span className="text-lg font-semibold text-gray-700">
-              | IME Pay
-            </span>
-          </Link>
+    <div className="fixed w-full bg-white shadow z-50">
+      <Container>
+        <Navbar expand="lg" className="py-1 w-full">
+          <Navbar.Brand href="/" className="d-flex align-items-center">
+            <img src={logo} alt="Logo" className="h-16" />
+            <span className="ml-2 text-sm font-roboto">| IME Pay</span>
+          </Navbar.Brand>
 
-          {/* Menu Button */}
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden focus:outline-none"
+          <Navbar.Toggle
+            aria-controls="navbar-nav"
+            onClick={() => setIsOpenMenu(!isOpenMenu)}
+            className="focus:outline-none shadow-sm"
           >
-            {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
-          </button>
+            <HiMenu className="text-3xl text-gray-700" />
+          </Navbar.Toggle>
 
-          {/* Navigation Links */}
-          <ul
-            className={`lg:flex lg:items-center lg:space-x-6 absolute lg:static left-0 w-full lg:w-auto bg-white lg:bg-transparent shadow-lg lg:shadow-none p-6 lg:p-0 transition-all duration-300 ease-in-out z-50 ${
-              isMenuOpen
-                ? "top-16 opacity-100"
-                : "-top-[400px] opacity-0 lg:opacity-100 lg:pointer-events-auto"
-            }`}
-          >
-            <li>
-              <Link
-                to="/"
-                className="font-medium text-gray-700 hover:text-red-900 block py-2"
+          <Navbar.Collapse id="navbar-nav" className="justify-start">
+            <Nav className="ml-auto space-x-4 text-[13px] font-medium font-roboto">
+              <Nav.Link
+                href="/"
+                className="px-3 hover:text-red-800 transition-colors duration-200"
               >
                 Home
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/about"
-                className="font-medium text-gray-700 hover:text-red-900 block py-2"
+              </Nav.Link>
+              <Nav.Link
+                href="/about"
+                className=" hover:text-red-800 transition-colors duration-200"
               >
                 About
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/team"
-                className="font-medium text-gray-700 hover:text-red-900 block py-2"
+              </Nav.Link>
+              <Nav.Link
+                href="/team"
+                className="  hover:text-red-800 transition-colors duration-200"
               >
                 Team
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/faq"
-                className="font-medium text-gray-700 hover:text-red-900 block py-2"
+              </Nav.Link>
+              <Nav.Link
+                href="/faq"
+                className="  hover:text-red-800 transition-colors duration-200"
               >
                 FAQ
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/contact"
-                className="font-medium text-gray-700 hover:text-gray-900 block py-2"
+              </Nav.Link>
+              <Nav.Link
+                href="/contact"
+                className="  hover:text-red-800 transition-colors duration-200"
               >
                 Contact
-              </Link>
-            </li>
-            <li>
-              <a
+              </Nav.Link>
+
+              <Nav.Link
                 href="https://sriyog.com/join"
                 target="_self"
-                className="block lg:inline-block py-2 lg:py-0"
+                className="font-semibold font-roboto text-gray-700 hover:text-red-800 transition-colors duration-200"
               >
-                <img
-                  src={joinNow}
-                  alt="Join Now"
-                  className="h-10 transition-transform transform hover:scale-105"
-                />
-              </a>
-            </li>
-            <li>
-              <a
+                <span className="inline-block transition-transform hover:scale-105">
+                  <img src={joinNow} alt="Join Now" className="h-9 -mt-2" />
+                </span>
+              </Nav.Link>
+
+              <Nav.Link
                 href="https://mail.yandex.com"
                 target="_blank"
-                className="block lg:inline-block py-2 lg:py-0"
+                className="font-semibold font-roboto text-gray-700 hover:text-red-800 transition-colors duration-200"
               >
-                <img
-                  src={Mail}
-                  alt="Email"
-                  className="h-10 transition-transform transform hover:scale-105"
-                />
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </div>
+                <span className="inline-block transition-transform hover:scale-105">
+                  <img src={mail} alt="Email" className="h-9 -mt-2" />
+                </span>
+              </Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
+        </Navbar>
+      </Container>
     </div>
   );
 };

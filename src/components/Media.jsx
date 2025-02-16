@@ -1,5 +1,7 @@
-import React, { useRef } from "react";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import React, { useState, useEffect } from "react";
+import { Carousel } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
+
 import AP1 from "../assets/Media/ap1.png";
 import ArthaSarokar from "../assets/Media/artha-sarokar.png";
 import Baahrakhari from "../assets/Media/12khari.png";
@@ -76,76 +78,130 @@ const mediaInfo = [
   },
 ];
 
-export const Media = () => {
-  const sliderRef = useRef(null);
-
-  const scrollLeft = () => {
-    if (sliderRef.current) {
-      sliderRef.current.scrollBy({ left: -300, behavior: "smooth" });
+const prepareSlides = (data, imagesPerSlide = 10) => {
+  let slides = [];
+  for (let i = 0; i < data.length; i++) {
+    let slide = [];
+    for (let j = 0; j < imagesPerSlide; j++) {
+      slide.push(data[(i + j) % data.length]);
     }
+    slides.push(slide);
+  }
+  return slides;
+};
+
+export const Media = () => {
+  const slides = prepareSlides(mediaInfo);
+  const [index, setIndex] = useState(0);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const handleSelect = (selectedIndex) => {
+    setIndex(selectedIndex);
   };
 
-  const scrollRight = () => {
-    if (sliderRef.current) {
-      sliderRef.current.scrollBy({ left: 300, behavior: "smooth" });
-    }
+  const handlePrev = () => {
+    setIndex((prevIndex) =>
+      prevIndex === 0 ? slides.length - 1 : prevIndex - 1
+    );
+  };
+
+  const handleNext = () => {
+    setIndex((prevIndex) => (prevIndex + 1) % slides.length);
   };
 
   return (
-    <div className="relative container mx-auto py-10 px-4 text-center mt-10">
-      <div className="relative flex items-center">
-        <button
-          onClick={scrollLeft}
-          className="absolute left-0 bg-white p-3 rounded-full shadow-lg z-10 hover:bg-gray-200 transition"
-        >
-          <FaChevronLeft size={24} className="text-gray-700" />
-        </button>
+    <div className="container mx-auto py-10 relative">
+      <Carousel
+        activeIndex={index}
+        onSelect={handleSelect}
+        indicators={false}
+        controls={false}
+        interval={null}
+        slide={true}
+      >
+        {slides.map((slide, idx) => (
+          <Carousel.Item key={idx}>
+            <div className="d-flex flex-column align-items-center">
+              <div className="d-flex justify-content-center gap-4 mb-3">
+                {slide.slice(0, 5).map((site, i) => (
+                  <a
+                    key={i}
+                    href={site.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img
+                      src={site.img}
+                      alt={site.title}
+                      className="img-fluid"
+                      style={{ maxHeight: "120px" }}
+                    />
+                  </a>
+                ))}
+              </div>
 
-        <div
-          ref={sliderRef}
-          className="flex overflow-x-auto scrollbar-hide space-x-6 px-12"
-        >
-          {mediaInfo.map((site, index) => (
-            <div
-              key={index}
-              className="flex flex-col items-center min-w-[150px] group"
-            >
-              <a
-                href={site.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="transform transition duration-300 hover:scale-110"
-                title={site.title}
-              >
-                <img
-                  src={site.img}
-                  alt={site.title}
-                  className="h-24 w-24 sm:h-32 sm:w-32 object-contain shadow-lg border border-gray-200 rounded-lg hover:shadow-xl transition"
-                />
-              </a>
-              <span className="mt-3 text-sm sm:text-md font-medium text-gray-700 group-hover:text-red-800 transition">
-                {site.title}
-              </span>
+              <div className="d-flex justify-content-center gap-4">
+                {slide.slice(5, 10).map((site, i) => (
+                  <a
+                    key={i}
+                    href={site.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img
+                      src={site.img}
+                      alt={site.title}
+                      className="img-fluid"
+                      style={{ maxHeight: "120px" }}
+                    />
+                  </a>
+                ))}
+              </div>
             </div>
-          ))}
-        </div>
+          </Carousel.Item>
+        ))}
+      </Carousel>
 
-        <button
-          onClick={scrollRight}
-          className="absolute right-0 bg-white p-3 rounded-full shadow-lg z-10 hover:bg-gray-200 transition"
-        >
-          <FaChevronRight size={24} className="text-gray-700" />
-        </button>
-      </div>
+      <button
+        className="position-absolute top-50 start-0 translate-middle-y p-2"
+        style={{
+          left: "20px",
+          zIndex: 10,
+          fontSize: windowWidth > 1200 ? "50px" : "35px",
+          color: "brown",
+          fontWeight: "bold",
+          background: "transparent",
+          border: "none",
+          cursor: "pointer",
+        }}
+        onClick={handlePrev}
+      >
+        ❮
+      </button>
 
-      <style>
-        {`
-          .scrollbar-hide::-webkit-scrollbar {
-            display: none;
-          }
-        `}
-      </style>
-      <div className="w-full pt-7 pb-7 border-b border-gray-300 "></div>
+      <button
+        className="position-absolute top-50 end-0 translate-middle-y border-0 p-2"
+        style={{
+          right: "20px",
+          zIndex: 10,
+          fontSize: windowWidth > 1200 ? "50px" : "35px",
+          color: "brown",
+          fontWeight: "bold",
+          background: "transparent",
+          border: "none",
+          cursor: "pointer",
+        }}
+        onClick={handleNext}
+      >
+        ❯
+      </button>
     </div>
   );
 };

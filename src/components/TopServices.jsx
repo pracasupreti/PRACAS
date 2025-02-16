@@ -1,4 +1,5 @@
 import React from "react";
+import { Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 import Electrician from "../assets/workCategory/electrician.png";
@@ -61,32 +62,38 @@ export const TopServices = () => {
   ];
 
   return (
-    <div className="container py-10">
-      <div className="flex justify-center mb-7">
-        <span className="text-xl font-bold text-gray-700">Top Services</span>
+    <section className="container mt-4">
+      <div className="flex justify-center mb-4">
+        <span className="font-bold font-roboto text-md text-gray-700">
+          Top Services
+        </span>
       </div>
 
-      <div className="flex justify-center">
-        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-9 gap-11">
-          {data.map((service) => (
-            <div
-              key={service.id}
-              className="flex flex-col items-center transition-transform duration-300 transform hover:scale-105"
-            >
-              <Link to="#" className="text-center hover:text-red-900">
+      <Row className="align-items-center justify-content-around">
+        {data.map((service) => (
+          <Col
+            key={service.id}
+            xs={6}
+            sm={4}
+            md={3}
+            lg={1}
+            className="text-center mb-4"
+          >
+            <div className="sriyog-top-service transition-transform duration-300 ease-in-out hover:scale-[1.20]">
+              <Link to="#" className="no-underline group">
                 <img
                   src={service.img}
                   alt={`${service.name} Icon`}
-                  className="h-10 w-10 sm:h-12 sm:w-12 object-contain mx-auto"
+                  className="w-9 h-9 mx-auto"
                 />
-                <span className="mt-2 text-xs sm:text-sm font-medium">
+                <span className="text-sm mt-2 block text-gray-800 group-hover:text-red-800 transition-colors duration-200 ease-in-out">
                   {service.name}
                 </span>
               </Link>
             </div>
-          ))}
-        </div>
-      </div>
-    </div>
+          </Col>
+        ))}
+      </Row>
+    </section>
   );
 };
