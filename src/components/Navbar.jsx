@@ -60,7 +60,7 @@ export const NavbarComponent = () => {
               </Nav.Link>
 
               <Nav.Link
-                href="https://sriyog.com/join"
+                href="/join"
                 target="_self"
                 className="font-semibold font-roboto text-gray-700 hover:text-red-800 transition-colors duration-200"
               >
