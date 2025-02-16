@@ -19,7 +19,7 @@ export const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between">
           <div className="w-full md:w-3/4 mt-[190px]">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-[12px] font-roboto text-gray-500">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-[13px] font-roboto text-gray-500">
               <div className="mb-4">
                 <a
                   href="/about"
