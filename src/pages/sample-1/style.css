@@ -1,0 +1,106 @@
+*
+{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body
+{
+    width: 800px;
+    margin: auto;
+}
+.header
+{
+    padding: 30px;
+    display: flex;
+}
+.headshot
+{
+    height: 150px;
+    width: 150px;
+}
+.name
+{
+    font-weight: bold;
+    font-size: 20px;
+    text-transform: uppercase;
+    margin-left: 100px;   
+    margin-top: 40px;
+}
+.color
+{
+    height: 6px;
+    width: 60px;
+    background-color: orange;
+}
+.body
+{
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+.left
+{
+    width: 30%;
+    border-right: 2px solid #cccc;
+}
+.body h3
+{
+    text-transform: uppercase;
+}
+.contact
+{
+    background-color: rgba(211, 175, 108, 0.753);
+    padding: 20px;
+}
+.skill 
+{
+    margin-top: 40px;
+}
+.skill ul
+{
+    padding-left: 20px;
+}
+.education
+{
+    margin-top: 40px;
+}
+.language
+{
+    margin-top: 40px;
+    padding-right: 20px;
+}
+.between
+{
+    display: flex;
+    justify-content: space-between;
+}
+.lan-color
+{
+    display: flex;
+    justify-content: space-between;
+    padding:0 10px 0 10px
+}
+.lan-color .orange
+{
+    background-color: orange;
+    height: 5px;
+    width: 40px;
+}
+.right
+{
+    padding: 20px;
+    width: 70%;
+}
+.summary p
+{
+    margin-top: 20px;
+}
+.work
+{
+    margin-top: 40px;
+}
+.work ul
+{
+    padding-left: 20px;
+}
