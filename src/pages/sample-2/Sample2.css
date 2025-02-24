@@ -1,0 +1,110 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body
+{
+    width: 800px;
+    margin: auto;
+    overflow-x: hidden;
+    padding: 20px;
+}
+.top
+{
+    display: flex;
+    gap: 25px;
+}
+.top img
+{
+    height: 200px;
+    width: 200px;
+}
+.name
+{
+    margin-top: 40px;
+    margin-bottom: 40px;
+
+}
+.name h1
+{
+    font-size: 40px;
+}
+.contact
+{
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+    width: 500px;
+    font-size: 10px;
+    color: #333;
+    font: bold;
+}
+.container
+{
+    display: flex;
+    gap: 20px;
+}
+.left
+{
+    width: 28%;
+    border-right: 1px solid #ccc;
+}
+.qr-code
+{
+    padding: 20px;
+    display: flex;
+    border-bottom: 1px solid #ccc;
+}
+.qr-code img
+{
+    width: 100px;
+    height: 100px;
+}
+.qr-code p
+{
+    font-size: 12px;
+    transform: rotate(-90deg);
+    padding: 5px;
+    border: 1px solid #ccc;
+    display: inline-block;
+    height: 30px;
+    width: 90px;
+    margin-top: 33px;
+    margin-left: -15px;
+    text-align: center;
+}
+.education
+{
+    margin-top: 20px;
+    border-bottom: 1px solid #ccc;
+}
+.skills
+{
+    margin: 20px 0;
+}
+.skills ul
+{
+    margin-left: 20px;
+}
+.skills ul li
+{
+    margin-top: 10px;
+}
+.right
+{
+    padding: 20px;
+}
+.right h3
+{
+    margin: 10px 0;
+}
+.profile
+{
+    padding-bottom: 20px;
+    border-bottom: 1px  solid #ccc;
+}
+.work-experience
+{
+    margin: 20px 0;
+}
