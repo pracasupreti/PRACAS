@@ -1,0 +1,80 @@
+*
+{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body
+{
+    width: 800px;
+    margin: auto;
+    padding: 20px;
+    background-color: #fff;
+}
+.headshot
+{
+    height: 150px;
+    width: 150px;
+    border-radius: 100%;
+}
+.header
+{
+    display: flex;
+    margin-bottom: 20px;
+}
+.name
+{
+    margin-left: 120px;
+    padding-top: 20px;
+}
+.name h1
+{
+    font-size: 30px;
+    font-weight: 800;
+    letter-spacing: 0.2rem;
+}
+.contact p
+{
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #333;
+}
+.education
+{
+    text-transform: capitalize;
+    margin-bottom: 40px;
+}
+.expertise
+{
+  margin-bottom: 20px;
+}
+.expertise p
+{
+    margin-bottom: 10px;
+}
+.body
+{
+  display: flex;
+}
+.left
+{
+  width: 30%;
+}
+.right
+{
+  width: 70%;
+}
+.we
+{
+  border-left: 1px solid #333;
+  padding-left: 15px;
+}
+.we ul li
+{
+  margin-bottom: 20px;
+}
+.reference
+{
+  display: flex;
+  justify-content: space-between;
+}
