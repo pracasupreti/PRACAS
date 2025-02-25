@@ -2,6 +2,8 @@ import React ,{useState} from 'react';
 import { IoReload } from "react-icons/io5";
 
 export function Carrer () {
+  const [showUpdateForm, setShowUpdateForm] = useState(false);
+  const [selectedFile, setSelectedFile] = useState(null);
 
 
     const initialState = {
@@ -239,6 +241,7 @@ export function Carrer () {
         required
       />
     </div>
+    
 
     <div className="mb-4 col-span-2">
       <label className="block text-gray-700 text-sm font-bold">Headshot</label>
@@ -315,7 +318,7 @@ export function Carrer () {
     </div>
 
     <div className="mb-4">
-    <label className="block text-gray-700 text-sm font-bold">*</label>
+    <label className="block text-gray-700 text-sm font-bold">Day Hours*</label>
     <select
         name="dutyHours"
         value={formData.dutyHours}
