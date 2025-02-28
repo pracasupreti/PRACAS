@@ -14,7 +14,7 @@ export default {
         'six':'600px',
         'seven':'700px',
         'eight':'800px',
-        'nine':'900px',
+        'nine':'877px',
         'ten':'1000px',
         'lg':'1050px',
         'xl':'1200px',
