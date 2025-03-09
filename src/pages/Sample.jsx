@@ -22,7 +22,7 @@ const Sample = () => {
    
                 <p className=' seven:mt-[-18px] four:mt-[-15px] four:text-[11px] seven:text-[17px]' >example@example.com</p>
        </div>
-       <div className="border-l-2 border-gray-300 seven:h-[1700px] h-[1100px] min-h-screen four:h-[1800px] six:h-[1290px] absolute seven:left-[254px] left-[305px] eight:left-[270px] nine:left-[283px] ten:left-[293px] lg:left-[305px] seven:top-[260px] 
+       <div className="border-l-2 border-gray-300 seven:h-[1500px] h-[1100px] min-h-screen four:h-[1800px] six:h-[1290px] absolute seven:left-[254px] left-[305px] eight:left-[270px] nine:left-[283px] ten:left-[293px] lg:left-[305px] seven:top-[260px] 
        top-[260px]
        four:left-[193px] four:top-[249px] six:left-[211px]"></div>
 
