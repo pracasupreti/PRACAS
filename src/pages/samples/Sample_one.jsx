@@ -39,10 +39,18 @@ const Sample_one = () => {
                 </div>
      
            </div> 
-           <div className='ml-[26px] '>
-            <h5 className='font-bold  text-lg'>Higher Education</h5>
-            <p>Trinity International College</p>
+           <div className=' flex justify-evenly '>
+            <h5 className='font-bold mr-[340px] text-lg'>Higher Education
+              <span>  <p className='text-sm'>Trinity International College</p></span>
+            </h5>
+          
+
+            <div > 
+              <p className='text-sm mb-[-1px] font-semibold'>patandhoka,lalitpur</p>
+              <p className='text-sm font-semibold  '>Apr, 2021 -  Present</p>
+              </div>
            </div>
+         
          <div className='mb-4 mt-9'>
           <h2>PROJECTS</h2>
          </div>
