@@ -6,6 +6,7 @@ import { Join } from "./pages/Join";
 import { Carrer } from "./pages/Carrer";
 import Sample from "./pages/Sample";
 import Cv from "./components/Cv";
+import Samples from "./components/Samples";
 function App() {
   return (
     <>
@@ -17,6 +18,7 @@ function App() {
           <Route path="/sample" element={<Sample />} />
           <Route path="/carrer" element={<Carrer />} />
           <Route path="/cv" element={<Cv />} />
+          <Route path="/samples" element={<Samples />} />
         </Routes>
       </Router>
     </>
