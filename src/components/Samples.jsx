@@ -7,6 +7,7 @@ import Sample_five from '../pages/samples/Sample_five';
 import Sample_six from '../pages/samples/Sample_six';
 import Sample_seven from '../pages/samples/Sample_seven';
 import Sample_eight from '../pages/samples/Sample_eight';
+import Sample_Nine from '../pages/cv/Sample_Nine';
 
 const Samples = ()=>{
 
@@ -28,6 +29,8 @@ const Samples = ()=>{
     <Sample_seven />
     <div className='h-24' />
     <Sample_eight />
+    <div className='h-24' />
+    <Sample_Nine />
     </>
  )
 }
