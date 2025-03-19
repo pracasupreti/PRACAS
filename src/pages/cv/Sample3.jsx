@@ -5,7 +5,7 @@ function Sample3() {
         <>
             <section className='max-w-3xl shadow-lg mx-auto'>
                 <div className='flex p-10 gap-10 mb-8'>
-                    <img className='h-25 w-25' src="/src/assets/cv/pracas.png" alt="headshot" />
+                    <img className='w-[150px] h-[150px]' src="/src/assets/cv/pracas.png" alt="headshot" />
                     <div className='mt-12'>
                         <h1>Pracas Upreti</h1>
                         <h6>UI/UX Desinger</h6>

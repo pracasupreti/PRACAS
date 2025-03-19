@@ -5,6 +5,8 @@ import Sample3 from '../pages/cv/Sample3'
 import Sample4 from '../pages/cv/Sample4'
 import Sample5 from '../pages/cv/Sample5'
 import Sample6 from '../pages/cv/Sample6'
+import Sample7 from '../pages/cv/Sample7'
+import Sample8 from '../pages/cv/Sample8'
 
 function cv() {
   return (
@@ -21,6 +23,10 @@ function cv() {
       <Sample5 />
       <div className='h-20' />
       <Sample6 />
+      <div className='h-20' />
+      <Sample7 />
+      <div className='h-20' />
+      <Sample8 />
     </>
   )
 }
