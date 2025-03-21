@@ -10,7 +10,7 @@ export const NavbarComponent = () => {
   const [isOpenMenu, setIsOpenMenu] = useState(false);
 
   return (
-    <div className="fixed w-full bg-white shadow z-50">
+    <div className="fixed w-full bg-white shadow z-50 left-0 right-0 top-0">
       <Container>
         <Navbar expand="lg" className="py-1 w-full">
           <Navbar.Brand href="/" className="d-flex align-items-center">
@@ -58,7 +58,9 @@ export const NavbarComponent = () => {
               >
                 Contact
               </Nav.Link>
-
+              <Nav.Link href="/cv">
+              CV
+              </Nav.Link>
               <Nav.Link
                 href="/join"
                 target="_self"
